@@ -39,9 +39,50 @@ class MySqlWrapper
            + ";port=" + port + ";User Id=" + username + ";password=" + password + ";SslMode=none";
 
         connection = new MySqlConnection(connectionQuery);
-        connection.Open();
     }
 
+     /*
+         * Open Connection to Server 
+         */
+        public bool Open()
+        {
+            try
+            {
+                connection.Open();
+                return true;
+            }
+            catch (MySqlException mex)
+            {
+                //Console.WriteLine(mex.Message);
+                return false;
+            }
+        }
+
+        /*
+        * Gets Database Connection state
+        */
+        public string State()
+        {
+            return connection.State.ToString();
+        }
+
+        /*
+        * Close Connection to Server 
+        */
+        public bool Close()
+        {
+            try
+            {
+                connection.Close();
+                return true;
+            }
+            catch (MySqlException mex)
+            {
+                //Console.WriteLine(mex.Message);
+                return false;
+            }
+        }
+    
     /*
      * Select database table.
      */
