@@ -14,7 +14,8 @@ database.Open();
 
 ### Connection State
 ```c#
-database.State();
+var dbstate = database.State();
+console.writeline(dbstate);
 ```
 
 ### Close Connection
