@@ -7,6 +7,20 @@ Download MySql connector [here](https://dev.mysql.com/downloads/connector/net/1.
 ```c#
 MySqlWrapper database = new MySqlWrapper("localhost", "username", "password", "database_name");
 ```
+### Open Connection
+```c#
+database.Open();
+```
+
+### Connection State
+```c#
+database.State();
+```
+
+### Close Connection
+```c#
+database.Close();
+```
 
 ### Insert Query
 ```c#
