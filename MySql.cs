@@ -30,8 +30,8 @@ class MySqlWrapper
      */ 
     private readonly bool debug = true;
 
-    /*
-     * Connect to database.
+   /*
+    * Connect to database.
     */
     public MySqlWrapper(string hostname, string username, string password, string database, int port = 3306)
     {
@@ -42,46 +42,46 @@ class MySqlWrapper
     }
 
      /*
-         * Open Connection to Server 
-         */
-        public bool Open()
+      * Open Connection to Server 
+      */
+     public bool Open()
+     {
+        try
         {
-            try
-            {
-                connection.Open();
-                return true;
-            }
-            catch (MySqlException mex)
-            {
-                //Console.WriteLine(mex.Message);
-                return false;
-            }
+            connection.Open();
+            return true;
         }
+            catch (MySqlException mex)
+        {
+            //Console.WriteLine(mex.Message);
+            return false;
+         }
+     }
 
-        /*
-        * Gets Database Connection state
-        */
+    /*
+     * Gets Database Connection state
+     */
         public string State()
         {
             return connection.State.ToString();
         }
 
-        /*
-        * Close Connection to Server 
-        */
-        public bool Close()
+    /*
+     * Close Connection to Server 
+     */
+    public bool Close()
+    {
+        try
         {
-            try
-            {
-                connection.Close();
-                return true;
-            }
-            catch (MySqlException mex)
-            {
-                //Console.WriteLine(mex.Message);
-                return false;
-            }
+            connection.Close();
+            return true;
         }
+            catch (MySqlException mex)
+        {
+            //Console.WriteLine(mex.Message);
+            return false;
+        }
+    }
     
     /*
      * Select database table.
