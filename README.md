@@ -21,13 +21,13 @@ database.Table("demo").Insert(insertData);
 
 ### Update Query
 ```c#
-var updateData = new Dictionary<string, string>{
-    ["lastname"] = "Johnson"
-};
 var whereUpdate = new Dictionary<string, Dictionary<string, string>>{
     ["age"] = new Dictionary<string, string>{
         ["="] = "24"
     }
+};
+var updateData = new Dictionary<string, string>{
+    ["lastname"] = "Johnson"
 };
 
 database.Table("demo").Where(whereUpdate).Update(updateData);
