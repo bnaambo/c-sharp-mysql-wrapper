@@ -17,7 +17,11 @@ database.Open();
 var dbstate = database.State();
 console.writeline(dbstate);
 ```
-
+or
+```c#
+console.writeline(database.State());
+```
+or any other way it fits ur scenario.
 ### Close Connection
 ```c#
 database.Close();
