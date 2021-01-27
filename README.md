@@ -29,54 +29,54 @@ database.Close();
 
 ### Insert Query
 ```c#
-var insertData = new Dictionary<string, string>{
+var Data = new Dictionary<string, string>{
     ["firstname"] = "John",
     ["lastname"] = "Smith",
     ["age"] = "24"
 };
 
-database.Table("demo").Insert(insertData);
+database.Table("demo").Insert(Data);
 ```
 
 ### Update Query
 ```c#
-var whereUpdate = new Dictionary<string, Dictionary<string, string>>{
+var Data = new Dictionary<string, Dictionary<string, string>>{
     ["age"] = new Dictionary<string, string>{
         ["="] = "24"
     }
 };
-var updateData = new Dictionary<string, string>{
+var Entry = new Dictionary<string, string>{
     ["lastname"] = "Johnson"
 };
 
-database.Table("demo").Where(whereUpdate).Update(updateData);
+database.Table("demo").Where(Entry).Update(Data);
 ```
 
 ### Select Query
 ```c#
-var whereGet = new Dictionary<string, Dictionary<string, string>>{
+var Data = new Dictionary<string, Dictionary<string, string>>{
     ["lastname"] = new Dictionary<string, string>{
         ["="] = "John"
     }
 };
 
-database.Table("demo").Where(whereGet).Get();
+database.Table("demo").Where(Data).Get();
 ```
 
 ### Delete Query
 ```c#
-var whereDelete = new Dictionary<string, Dictionary<string, string>>{
+var Data = new Dictionary<string, Dictionary<string, string>>{
     ["age"] = new Dictionary<string, string>{
         ["="] = "24"
     }
 };
 
-database.Table("demo").Where(whereDelete).Delete();
+database.Table("demo").Where(Data).Delete();
 ```
 
 ### Where condition
 ```c#
-var whereAdvanced = new Dictionary<string, Dictionary<string, string>>{
+var Data = new Dictionary<string, Dictionary<string, string>>{
     ["firstname"] = new Dictionary<string, string>{
         ["="] = "John"
     },
@@ -86,5 +86,5 @@ var whereAdvanced = new Dictionary<string, Dictionary<string, string>>{
     }
 };
 
-database.Table("demo").Where(whereAdvanced).Get();
+database.Table("demo").Where(Data).Get();
 ```
